@@ -1,7 +1,7 @@
 {
   "name": "CMS-UI-Framework",
   "title": "Corporate Management System",
-  "author": "By Jayaseelan, Object frontier Software Pvt. Ltd.",
+  "author": "By Jayaseelan",
   "version": "0.1.0",
   "devDependencies": {
     "connect-livereload": "^0.5.3",
