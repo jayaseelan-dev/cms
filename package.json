@@ -1,5 +1,5 @@
 {
-  "name": "CMS-UI-Framework",
+  "name": "cms-ui",
   "title": "Corporate Management System",
   "author": "By Jayaseelan",
   "version": "0.1.0",
@@ -19,6 +19,7 @@
     "grunt-contrib-concat": "~0.3.0"
   },
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "bower": "*"
   }
 }
