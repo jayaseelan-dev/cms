@@ -1,0 +1,86 @@
+<div>
+    <div ng-include="'views/common/filter-template.html'"></div>
+    <notification-message></notification-message>
+    <!-- k-scrollable="{virtual:true}"
+        k-pageable="{
+            input: true,
+            numeric: false
+        }"
+        k-pageable="{
+            input: true,
+            numeric: false,
+            messages: {
+                display: 'Showing {0} to {1} of {2}'
+            },
+            refresh: true
+        }"
+    -->
+    <div id="companyKendoGrid"
+         kendo-grid
+         k-sortable="true"
+         k-filterable="false"
+	     k-selectable="true"
+         k-groupable="false"
+         k-on-change="selectedGridItem(dataItem)"
+         k-height="250"
+         k-resizable="true"
+         k-reorderable="true"
+         k-toolbar='[
+                        {
+                            template : "<button class=\"k-button\" ng-click=\"clearFormData(); openWindow(); isFormButtonVisible=true\">
+                                            <i class=\"k-icon k-add\"></i>Add New
+                                        </button>"
+                        }
+                    ]'
+         k-data-source="getCompanyDataSource()"
+         k-columns='[
+                        { field: "ceoName", title: "CEO Name", width: "100px" },
+                        { field: "companyName", title: "Company Name", width: "170px" },
+                        { field: "webURL", title: "Website", width: "200px" },
+                        { field: "addressLine", title: "Address", width: "150px" },
+                        { field: "city", title: "City", width: "100px" },
+                        { field: "state", title: "State", width: "150px" },
+                        { field: "country", title: "Country", width: "120px" },
+                        { field: "pincode", title: "Pincode", width: "100px" },
+                        { field: "telephone", title: "Telephone", width: "150px" },
+                        { title: "Action",
+                          template: "<context-menu></context-menu>",
+                          width: "120px"
+                        }
+                    ]'
+        >
+	</div>
+    <!-- k-messages="{
+        page: 'Page:',
+        display: 'Showing {0} to {1} | {2}'
+    }" -->
+    <div id="grid-pagination"
+         kendo-pager
+         k-data-source="getCompanyDataSource()"
+         k-numeric="false"
+         k-input="true"
+         custom-grid-pagination
+         on-cancel-clicked="onCancelClick()">
+    </div>
+    <button ng-click="loadData()">Load Grid Data</button>
+    <button ng-click="resetData()">Reset Grid Data</button>
+    <button ng-click="selectGridRow()">Select Row</button>
+    <div kendo-window="modalWindow"
+         k-title="'Company Form'"
+         k-visible="false"
+         k-modal="true"
+         k-width="800"
+         k-resizable="false"
+         k-position="{ top: '25%', left: '25%' }"
+         k-draggable="false"
+         k-content="{ url: 'views/company/company-form.html' }">
+    </div>
+    <div kendo-window="confirmWindow"
+         k-title="'Confirm'"
+         k-modal="true"
+         k-actions='[]'
+         k-width="300"
+         k-visible="false"
+         k-content="{ url: 'views/common/confirmation-box-template.html' }">
+    </div>
+</div>

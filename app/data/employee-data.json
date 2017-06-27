@@ -1,0 +1,16 @@
+[
+    {
+        "companyName" : "Object-frontier Softwares",
+        "employeeName": "Jayaseelan",
+        "joiningDate": "2014-08-11",
+        "designation": "Software Engineer",
+        "fatherName": "K. Selvaraj",
+        "gender": "Male",
+        "addressLine": "Choolaimedu",
+        "city": "Chennai",
+        "state": "Tamil Nadu",
+        "country": "India",
+        "pincode": "600094",
+        "mobileNumber": "9790787381"
+    }
+]

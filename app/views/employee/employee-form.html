@@ -1,0 +1,143 @@
+<div>
+	<div class="mandatory-div">
+			<span class="mandatory-symbol">*</span>
+			<span>Mandatory Fields</span>
+	</div>
+	<div class="form-fields">
+		<form name="employeeForm" novalidate>
+			<table>
+				<tr>
+					<td>
+						<label>Company Name</label>
+						<span class="mandatory-symbol">*</span>
+					</td>
+					<td>
+						<select kendo-drop-down-list ng-model="employee.companyName" k-data-source="companyNames"
+								k-option-label="'-----Select-----'" required>
+						</select>
+					</td>
+					<td>
+						<label>Employee Name</label>
+						<span class="mandatory-symbol">*</span>
+					</td>
+					<td>
+						<input class="k-textbox" name="employeeName" ng-model="employee.employeeName"
+							   required ng-pattern="/^[a-zA-Z\s.]+[a-zA-Z]$/"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Joining Date</label>
+						<span class="mandatory-symbol">*</span>
+					</td>
+					<td>
+						<input type="date" class="k-textbox" name="dateOfJoin" ng-model="employee.joiningDate" required />
+					</td>
+					<td>
+						<label>Designation</label>
+					</td>
+					<td>
+						<input class="k-textbox" name="designation" ng-model="employee.designation" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Father's Name</label>
+						<span class="mandatory-symbol">*</span>
+					</td>
+					<td>
+						<input class="k-textbox" name="fatherName" ng-model="employee.fatherName"
+							   ng-pattern="/^[a-zA-Z\s.]+[a-zA-Z]$/" required />
+					</td>
+					<td>
+						<label>Gender</label>
+						<span class="mandatory-symbol">*</span>
+					</td>
+					<td>
+						<input type="radio" name="gender" ng-model="employee.gender" value="Male" ng-required="!genderValue"/>Male
+						<input type="radio" name="gender" ng-model="employee.gender" value="Female" ng-required="!genderValue"/>Female
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Address</label>
+						<span class="mandatory-symbol">*</span>
+					</td>
+					<td>
+						<input class="k-textbox" name="address" ng-model="employee.addressLine" required />
+					</td>
+					<td>
+						<label>Country</label>
+						<span class="mandatory-symbol">*</span>
+					</td>
+					<td>
+						<select kendo-drop-down-list ng-model="employee.country" k-data-source="countryList"
+								k-option-label="'-----Select-----'" required>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>State</label>
+						<span class="mandatory-symbol">*</span>
+					</td>
+					<td>
+						<select kendo-drop-down-list ng-model="employee.state" k-data-source="stateList"
+								k-option-label="'-----Select-----'" required>
+						</select>
+					</td>
+					<td>
+						<label>City</label>
+						<span class="mandatory-symbol">*</span>
+					</td>
+					<td>
+						<select kendo-drop-down-list ng-model="employee.city" k-data-source="cityList"
+								k-option-label="'-----Select-----'" required>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Postal Code</label>
+						<span class="mandatory-symbol">*</span></td>
+					<td>
+						<input class="k-textbox" name="pincode" ng-model="employee.pincode" maxlength="6"
+							   ng-pattern="/^[0-9]{6}$/" required />
+					</td>
+					<td>
+						<label>Mobile</label>
+						<span class="mandatory-symbol">*</span>
+					</td>
+					<td>
+						<input class="k-textbox" name="mobileNumber" ng-model="employee.mobileNumber" maxlength="10"
+							   ng-pattern="/^[7-9]{1}[0-9]{9}$/" required placeholder="Start with 7/8/9"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		<div class="error-area">
+			<div>
+				<span ng-show="employeeForm.employeeName.$error.pattern">{{'Employee Name: Invalid name'}}</span>
+			</div>
+			<div>
+				<span ng-show="employeeForm.fatherName.$error.pattern">{{'Father Name: Invalid name'}}</span>
+			</div>
+			<div>
+				<span ng-show="employeeForm.pincode.$error.pattern">{{'Pincode: 6 digit numbers only allowed'}}</span>
+			</div>
+			<div>
+				<span ng-show="employeeForm.mobileNumber.$error.pattern">{{'Mobile Number: 10 digit numbers only allowed'}}</span>
+			</div>
+		</div>
+	</div>
+	<div class="form-buttons">
+		<button class="k-button" ng-show="isFormButtonVisible" ng-disabled="employeeForm.$invalid"
+				ng-click="insertEmployeeData(); employeeForm.$setPristine();">
+				<span><i class="k-icon k-i-plus"></i>Insert</span>
+		</button>
+		<button class="k-button" ng-show="!isFormButtonVisible" ng-disabled="employeeForm.$invalid"
+				ng-click="updateEmployeeData(); employeeForm.$setPristine();">
+				<span><i class="k-icon k-i-tick"></i>Update</span>
+		</button>
+	</div>
+</div>

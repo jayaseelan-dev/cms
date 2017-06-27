@@ -1,0 +1,274 @@
+body {
+    color: #7e3d3c;
+	min-width: 500px;
+}
+
+::selection {
+	color: burlywood;
+}
+
+a:link, a:hover, a:visited, a:active {
+	text-decoration: none;
+	color: #d3d3d3;
+	outline: 0;
+}
+
+form .ng-dirty.ng-invalid {
+	border:1px solid Red;
+}
+
+.k-grid tbody:empty::before {
+    content:'No data to display';
+}
+
+.k-grid th, .k-grid td {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+}
+
+.k-grid .k-state-selected {
+    background: #FEF4E6;
+    color: #9B815F;
+}
+
+.header {
+	color: white;
+	background-color: #7e3d3c;
+	box-shadow: 0px 0px 10px 3px #7e3d3c;
+	height: 70px;
+	padding-top: 20px;
+	z-index: 999;
+	width: 98%;
+	font-family: "Courier New";
+    text-align: center;
+}
+
+.header #title-wrapper {
+    display: inline-block;
+    margin-left: 86px;
+}
+
+#title-wrapper #title {
+	font-size: 24px;
+	font-weight: bold;
+	text-shadow: 0px 5px 2px rgba(150, 150, 150, 1);
+}
+
+.header #welcome-wrapper {
+    display: inline;
+}
+
+#welcome-wrapper #greetings {
+	font-size: 18px;
+	color: burlywood;
+}
+
+#welcome-wrapper #user-image {
+    border: 1px solid burlywood;
+    background-color: white;
+    border-radius: 50px;
+    padding: 10px 0px 15px 0px;
+}
+
+#user-image img {
+    width: 50px;
+    height: 40px;
+}
+.sidebar-navigation {
+	font-family: "Courier New";
+    box-shadow: 0px 0px 20px 3px #a6a6a6;
+    background-color: #d3d3d3;
+    color: #7e3d3c;
+    /*height: 100%;*/
+    height: 88%;
+	min-height: 550px;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 160px;
+    position: fixed;
+	padding-top: 10px;
+}
+
+.logo-area {
+	margin-left: 10px;
+	padding-bottom: 40px;
+}
+
+.logo-area img {
+	width: 80%;
+}
+
+.sidebar-navigation .menu {
+	margin-left: 10px;
+	margin-right: 15px;
+}
+
+.sidebar-navigation .menu div {
+	margin-bottom: 20px;
+	font-size: 16px;
+	font-weight: bold;
+	box-shadow: 0px 0px 10px 3px #615959;
+	background-color: #615959;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.sidebar-navigation .menu div:hover, .sidebar-navigation .menu div.active-menu {
+	background-color: #a14e4c;
+}
+
+.sidebar-navigation .menu div:hover a, .sidebar-navigation .menu div.active-menu a {
+	text-shadow: 2px 2px 2px grey;
+}
+
+.sidebar-navigation .menu div span {
+	padding-left: 10px;
+}
+
+#login-wrapper {
+	font-size: 20px;
+	font-family: "Times New Roman";
+	min-width: 200px;
+	width: 30%;
+	height: 280px;
+	margin: 100px 0 50px 35%;
+	text-align: center;
+	opacity: 0.9;
+	background-color: #a14e4c;
+	border-radius: 5px;
+}
+
+#login-wrapper h2 {
+	color: white;
+	position: absolute;
+	margin-left: 20px;
+	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: bold;
+	text-shadow: white 1px 1px 2px;
+}
+
+.username-input {
+	width: 70%;
+	height: 40px;
+	margin-top: 60px;
+}
+
+.password-input {
+	width: 70%;
+	height: 40px;
+	margin-top: 20px;
+}
+
+.submit-btn {
+	width: 70%;
+	height: 40px;
+	margin-top: 20px;
+	color: brown;
+	font-weight: bold;
+}
+
+.page-content-wrapper {
+	background-image: url('/assest/images/page-bg.jpg');
+	box-shadow: 0px 0px 10px 3px #7e3d3c;
+	height: 88%;
+	min-height: 550px;
+	z-index: 999;
+	width: 98%;
+}
+
+.content-view {
+	padding: 10px;
+	margin-left: 165px;
+}
+
+.advanceFilter {
+	width: 50%;
+	margin-bottom: 20px;
+}
+
+.mandatory-div {
+	font-size: 12px;
+	text-align: right;
+	color: red;
+}
+
+.mandatory-symbol {
+	font-size: 12px;
+	color: red;
+}
+
+.k-grid tbody button.k-button {
+	min-width: 12px;
+}
+
+#inner-grid-menu{
+    margin-left: 35px;
+}
+
+.dropdown {
+    position: absolute;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    left: -20px;
+    top: -27px;
+    padding: 0;
+    border-radius: 2px;
+    min-width: 70px;
+    text-align: left;
+    border-color: #7e3d3c;
+    box-shadow: 2px 3px 9px 0px #7e3d3c;
+}
+
+.dropdown-menu div:hover{
+	color: white;
+    background-color: burlywood;
+}
+
+.form-fields {
+	margin-bottom: 20px;
+}
+
+.form-fields table{
+	width: 100%;
+}
+
+.form-buttons {
+	text-align: right;
+}
+
+.error-area {
+	background-color: yellow;
+	color: red;
+}
+
+.notification-area {
+	width: 60%;
+	margin: 0 auto 30px auto;
+	text-align: center;
+}
+
+/*Kendo grid pager*/
+.k-grid-pager a.prev {
+    float: left;
+    vertical-align: middle;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.k-grid-pager a.next {
+    float: left;
+    vertical-align: middle;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.k-grid-pager .pagesize input {
+    width: 30px;
+}
+
+.k-grid-pager {
+    line-height: 1.5em;
+}

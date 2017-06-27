@@ -1,0 +1,12 @@
+<div class="header" ng-controller="headerController">
+    <div id="title-wrapper">
+        <span id="title">Corporate Management System</span>
+    </div>
+    <div id="welcome-wrapper">
+        <span id="greetings" ng-bind="user">
+        </span>
+        <span id="user-image" ng-show="isUserImageVisible">
+            <img ng-src="/assest/images/{{imageName}}" />
+        </span>
+    </div>
+</div>

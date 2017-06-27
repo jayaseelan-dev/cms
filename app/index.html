@@ -1,0 +1,50 @@
+<html>
+    <head>
+      <title>Corporate Management System</title>
+      <link rel="icon" href="assest/images/cms-favicon.ico"></link>
+    </head>
+    <body ng-app="cms" ng-cloak>
+
+        <div ui-view></div>
+
+        <!-- Start Vendors JS -->
+        <script src="lib/jquery-1.9.1.min.js"></script>
+        <!-- build:js lib/angular-lib.min.js-->
+        <script src="lib/angular-1.2.18.min.js"></script>
+        <script src="lib/angular-ui-router-0.2.11.js"></script>
+        <script src="lib/angular-local-storage.min.js"></script>
+        <!-- endbuild-->
+        <script src="lib/ui-bootstrap-tpls-0.12.0.js"></script>
+        <script src="lib/kendo.all.min.js"></script>
+        <!-- End vendors JS -->
+
+        <!-- Start Custom JS-->
+        <!-- build:js scripts/cms-prod-app.min.js-->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/app-config.js"></script>
+        <script src="scripts/directives/context-menu-directive.js"></script>
+        <script src="scripts/directives/notifications-directive.js"></script>
+        <script src="scripts/directives/grid-pagination-directive.js"></script>
+        <script src="scripts/services/session-service.js"></script>
+        <script src="scripts/services/region-list-service.js"></script>
+        <script src="scripts/services/company-service.js"></script>
+        <script src="scripts/controllers/header-controller.js"></script>
+        <script src="scripts/controllers/login-controller.js"></script>
+        <script src="scripts/controllers/logout-controller.js"></script>
+        <script src="scripts/controllers/company-controller.js"></script>
+        <script src="scripts/controllers/employee-controller.js"></script>
+        <!-- endbuild-->
+        <!-- End Custom JS-->
+
+        <!-- Vendors' CSS -->
+        <link href="styles/vendors/kendo.common.min.css" rel="stylesheet"/>
+        <link href="styles/vendors/kendo.default.min.css" rel="stylesheet"/>
+        <link href="styles/vendors/bootstrap.icon-large.css" rel="stylesheet"/>
+        <link href="styles/vendors/bootstrap.min.css" rel="stylesheet"/>
+
+        <!-- Custom CSS -->
+        <!-- build:css styles/cms/cms-prod-styles.min.css-->
+        <link href="styles/cms/stylesheet.css" rel="stylesheet"/>
+        <!-- endbuild-->
+    </body>
+</html>

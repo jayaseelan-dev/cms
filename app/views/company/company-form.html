@@ -1,0 +1,124 @@
+<div>
+    <div class="mandatory-div">
+            <span class="mandatory-symbol">*</span>
+            <span>Mandatory Fields</span>
+    </div>
+    <div class="form-fields">
+        <form name="companyForm" novalidate>
+            <table>
+                <tr>
+                    <td>
+                        <label>Name</label>
+                        <span class="mandatory-symbol">*</span>
+                    </td>
+                    <td>
+                        <input class="k-textbox" name="companyName" ng-model="company.companyName"
+                               required/>
+                    </td>
+                    <td>
+                        <label>Address</label>
+                        <span class="mandatory-symbol">*</span>
+                    </td>
+                    <td>
+                        <input class="k-textbox" name="address" ng-model="company.addressLine"
+                               required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Country</label>
+                        <span class="mandatory-symbol">*</span>
+                    </td>
+                    <td>
+                        <select kendo-drop-down-list ng-model="company.country" k-data-source="countryList"
+                                k-option-label="'-----Select-----'" required>
+                        </select>
+                    </td>
+                    <td>
+                        <label>State</label>
+                        <span class="mandatory-symbol">*</span>
+                    </td>
+                    <td>
+                        <select kendo-drop-down-list ng-model="company.state" k-data-source="stateList"
+                                k-option-label="'-----Select-----'" required>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>City</label>
+                        <span class="mandatory-symbol">*</span>
+                    </td>
+                    <td>
+                        <select kendo-drop-down-list ng-model="company.city" k-data-source="cityList"
+                                k-option-label="'-----Select-----'" required>
+                        </select>
+                    </td>
+                    <td>
+                        <label>Postal Code</label>
+                        <span class="mandatory-symbol">*</span>
+                    </td>
+                    <td>
+                        <input class="k-textbox" name="pincode" ng-model="company.pincode" ng-pattern="/^[0-9]{6}$/"
+                               required maxlength="6"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>TelePhone:<label>
+                        <span class="mandatory-symbol">*</span>
+                    </td>
+                    <td>
+                         <input class="k-textbox" name="telephone" ng-model="company.telephone" maxlength="12"
+                                ng-pattern="/^[0-9]{8,}$/" required/>
+                    </td>
+                    <td>
+                        <label>CEO Name<label>
+                        <span class="mandatory-symbol">*</span>
+                    </td>
+                    <td>
+                         <input class="k-textbox" name="ceoName" ng-model="company.ceoName"
+                                ng-pattern="/^[a-zA-Z\s.]+[a-zA-Z]$/" required/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Website URL</label>
+                        <span class="mandatory-symbol">*</span>
+                    </td>
+                    <td>
+                        <input type="url" class="k-textbox" name="webUrl" ng-model="company.webURL"
+                               required placeholder="http://www.abc.com"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <div class="error-area">
+            <div>
+                <span ng-show="companyForm.telephone.$error.pattern">{{'Telephone: Minimum 8 digit numbers only allowed'}}</span>
+            </div>
+            <div>
+                <span ng-show="companyForm.pincode.$error.pattern">{{'Pincode: 6 digit numbers only allowed'}}</span>
+            </div>
+            <div>
+                <span ng-show="companyForm.ceoName.$error.pattern">{{'CEO Name: Invalid name'}}</span>
+            </div>
+            <div>
+                <span ng-show="companyForm.webUrl.$error.url">{{'Website: Invalid URL'}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="form-buttons">
+        <button class="k-button" ng-show="isFormButtonVisible" ng-disabled="companyForm.$invalid"
+                ng-click="insertCompanyData(); companyForm.$setPristine();">
+                <span><i class="k-icon k-i-plus"></i>Add</span>
+        </button>
+        <button class="k-button" ng-show="!isFormButtonVisible" ng-disabled="companyForm.$invalid"
+                ng-click="updateCompanyData(); companyForm.$setPristine();">
+                <span><i class="k-icon k-i-tick"></i>Update</span>
+        </button>
+        <!-- <button class="k-button" ng-click="windowOnClose()">
+            <span><i class="k-icon k-i-close"></i>Close</span>
+        </button> -->
+    </div>
+</div>

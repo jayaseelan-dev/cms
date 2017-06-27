@@ -1,0 +1,5 @@
+{
+    "country": ["Afganistan", "Brazil", "India"],
+    "state"  : ["Andra pradesh", "Maharashtra", "Tamil Nadu", "West Bengal"],
+    "city"   : ["Chennai", "Mumbai", "Kolkata"]
+}

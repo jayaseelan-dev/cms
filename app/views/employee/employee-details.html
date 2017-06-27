@@ -1,0 +1,49 @@
+<div>
+  <div ng-include="'views/common/filter-template.html'"></div>
+  <notification-message></notification-message>
+  <div kendo-grid
+       k-sortable="true"
+       k-filterable="false"
+       k-selectable="false"
+       k-scrollable="true"
+       k-groupable="false"
+       k-resizable="true"
+       k-reorderable="true"
+       k-pageable="{
+                    input: false,
+                    numeric: true
+                   }"
+       k-toolbar='[{
+                    template : "<button class=\"k-button\" ng-click=\"clearFormData(); openWindow(); isFormButtonVisible=true\"><i class=\"k-icon k-add\"></i>Add New</button>"
+                  }]'
+       k-data-source="employeeDataSource"
+       k-columns='[ { field: "companyName", title: "Company Name", width: "170px" },
+                    { field: "employeeName", title: "Employee Name", width: "150px" },
+                    { field: "gender", title: "Gender", width: "80px" },
+                    { field: "joiningDate", title: "Joining Date", width: "150px" },
+                    { field: "designation", title: "Designation", width: "150px" },
+                    { field: "fatherName", title: "Father&#39;s Name", width: "150px" },
+                    { field: "addressLine", title: "Address", width: "150px" },
+                    { field: "city", title: "City", width: "150px" },
+                    { field: "state", title: "State", width: "150px" },
+                    { field: "country", title: "Country", width: "100px" },
+                    { field: "pincode", title: "Pincode", width: "100px" },
+                    { field: "mobileNumber", title: "Mobile", width: "150px" },
+                    { title: "Action",
+                      template: "<context-menu></context-menu>",
+                      width: "120px"
+                    }
+                ]'>
+    </div>
+    <div
+         kendo-window="modalWindow"
+         k-title="'Employee Details'"
+         k-visible="false"
+         k-resizable="false"
+         k-width="800"
+         k-modal="true"
+         k-position="{ top: '25%', left: '25%' }"
+         k-draggable="false"
+         k-content="{ url: 'views/employee/employee-form.html' }">
+    </div>
+</div>

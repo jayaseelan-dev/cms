@@ -1,0 +1,20 @@
+<div ng-include="'views/common/header-template.html'"></div>
+<div id="home-content">
+    <div id="login-wrapper">
+        <h2>Login</h2>
+        <form name="loginForm">
+            <div>
+                <input class="k-textbox username-input" type="text" ng-model="userName" placeholder="Username" required autofocus />
+            </div>
+            <div>
+                <input class="k-textbox password-input" type="password" ng-model="password" placeholder="Password" required />
+            </div>
+            <div>
+                <input type="button" class="k-button submit-btn" value="Login" ng-disabled="loginForm.$invalid" ng-click="checkCredentials()"/>
+            </div>
+        </form>
+    </div>
+    <div>
+        <notification-message></notification-message>
+    </div>
+</div>
